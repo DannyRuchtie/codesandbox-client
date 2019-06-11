@@ -4,21 +4,24 @@ import BaseMoreInfoIcon from 'react-icons/lib/md/arrow-drop-down';
 import Tooltip from '@codesandbox/common/lib/components/Tooltip';
 import { OptionProps } from './types';
 
-const blinkAnimation = keyframes`
-  // @ts-ignore;
-  0% {color: ${(props: { theme: { light: boolean } }) =>
-    props.theme.light
+// @ts-ignore;
+const blinkAnimation = keyframes`${({ theme }) => css`
+  0% {
+    color: ${theme.light
       ? css`rgba(0, 0, 0, 0.7)`
-      : css`rgba(255, 255, 255, 0.7)`}};
+      : css`rgba(255, 255, 255, 0.7)`};
+  }
 
-	50% {color: rgba(255, 255, 255, 1);}
+  50% {
+    color: rgba(255, 255, 255, 1);
+  }
 
-	100% {color: ${(props: { theme: { light: boolean } }) =>
-    props.theme.light
+  100% {
+    color: ${theme.light
       ? css`rgba(0, 0, 0, 0.7)`
-      : css`rgba(255, 255, 255, 0.7)`}};
-
-`;
+      : css`rgba(255, 255, 255, 0.7)`};
+  }
+`}`;
 
 const styles = ({
   blink,
