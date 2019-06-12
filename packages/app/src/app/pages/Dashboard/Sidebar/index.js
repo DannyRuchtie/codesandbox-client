@@ -76,7 +76,8 @@ class Sidebar extends React.Component {
                     path="/dashboard/templates"
                     name="Templates"
                   />
-                  <TrashItem />
+
+                  <TrashItem currentPath={path} />
                 </Items>
 
                 <Query query={TEAMS_QUERY}>
